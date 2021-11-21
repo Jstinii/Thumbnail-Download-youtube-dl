@@ -1,4 +1,4 @@
-# Thumnail Download for youtube-dl
+# Thumbnail Download for youtube-dl
 
 To be finished
 
