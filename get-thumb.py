@@ -35,13 +35,22 @@ def main():
 
     try:
         img = url_to_image('https://img.youtube.com/vi/'+video_id+'/maxresdefault.jpg')
+        if str(file_type) == 'm4a':
+            height = 720
+            width = 720 # keep original width
+            dim = (width, height)
+            img = cv2.resize(img, dim)
+
     except: # Some videos do not have maxresdafult thumbnails, switch to best alternative
         img = url_to_image('https://img.youtube.com/vi/'+video_id+'/hqdefault.jpg')
+        if str(file_type) == 'm4a':
+            height = 360
+            width = 360 
+            dim = (width, height)
+            img = cv2.resize(img, dim)
         
     cv2.imwrite(title + '.jpg', img)
-
     p = subprocess.run(['youtube-dl',url,'-f'+file_type]) # Run youtube-dl
-
 
 if __name__ == "__main__":
     main()
