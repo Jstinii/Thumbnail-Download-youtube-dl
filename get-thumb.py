@@ -16,7 +16,7 @@ def url_to_image(url):
 def main():
     url = sys.argv[1]
     file_type = sys.argv[2]
-    video_id = str(url.split("=", 1)[1]) # Spit into arrary and get video id
+    video_id = str(url.split("=", 1)[1]) # Split into arrary and get video id
     #Get YouTube Data API v3 Key here https://console.cloud.google.com
     get = requests.get('https://www.googleapis.com/youtube/v3/videos', params = {'id': video_id, 'part': 'contentDetails,statistics,snippet', 'key': 'INSERT DEVELOPER API KEY HERE'})    
     resp_dict = json.loads(get.content)
