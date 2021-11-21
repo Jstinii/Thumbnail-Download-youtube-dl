@@ -16,6 +16,7 @@ Python3: https://www.python.org/
 2. Create GCP Project that manages YouTube Data API v3 and add an API key from project to developer key
 3. Run python get-thumb.py in same folder as youtube-dl  <br />
    Argument[1] YouTube URL: https://www.youtube.com/watch?v=VIDEOID <br />
+   Argument[2] File Type: File type for youtube-dl <br />
 4. Thumbnail and downloaded file saved in parent folder
 
  

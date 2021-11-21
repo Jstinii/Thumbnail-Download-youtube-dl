@@ -14,8 +14,8 @@ def url_to_image(url):
     return image
 
 def main():
-    
     url = sys.argv[1]
+    file_type = sys.argv[2]
     video_id = str(url.split("=", 1)[1]) # Spit into arrary and get video id
     #Get YouTube Data API v3 Key here https://console.cloud.google.com
     get = requests.get('https://www.googleapis.com/youtube/v3/videos', params = {'id': video_id, 'part': 'contentDetails,statistics,snippet', 'key': 'INSERT DEVELOPER API KEY HERE'})    
@@ -37,7 +37,7 @@ def main():
     img = url_to_image('https://img.youtube.com/vi/'+video_id+'/maxresdefault.jpg')
     cv2.imwrite(title + '.jpg', img)
 
-    p = subprocess.run(['youtube-dl',url,'-f m4a']) # Run youtube-dl
+    p = subprocess.run(['youtube-dl',url,'-f'+file_type]) # Run youtube-dl
 
 
 if __name__ == "__main__":
