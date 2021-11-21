@@ -33,8 +33,11 @@ def main():
     title = title.encode('ascii',"ignore") # Has to encode it again into ASCII for some reaosn
     title = title.decode() # Finished string
 
-
-    img = url_to_image('https://img.youtube.com/vi/'+video_id+'/maxresdefault.jpg')
+    try:
+        img = url_to_image('https://img.youtube.com/vi/'+video_id+'/maxresdefault.jpg')
+    except: # Some videos do not have maxresdafult thumbnails, switch to best alternative
+        img = url_to_image('https://img.youtube.com/vi/'+video_id+'/hqdefault.jpg')
+        
     cv2.imwrite(title + '.jpg', img)
 
     p = subprocess.run(['youtube-dl',url,'-f'+file_type]) # Run youtube-dl
