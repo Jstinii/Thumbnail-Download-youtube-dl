@@ -1,10 +1,10 @@
-# Thumbnail Download for youtube-dl
+# Thumbnail Download for yt-dlp
 
 To be finished
 
 # Description <br />
 Python script to download thumbnails for youtube videos downloaded <br />
-with youtube-dl 
+with yt-dlp
 
 # Requirements <br />
 GCP API Key: https://console.cloud.google.com  <br />
