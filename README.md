@@ -8,7 +8,7 @@ with youtube-dl
 
 # Requirements <br />
 GCP API Key: https://console.cloud.google.com  <br />
-youtube-dl: https://github.com/ytdl-org/youtube-dl <br />
+yt-dlp: https://github.com/yt-dlp/yt-dlp <br />
 Python3: https://www.python.org/
 
 # How to use

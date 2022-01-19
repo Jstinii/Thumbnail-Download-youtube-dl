@@ -50,7 +50,7 @@ def main():
             img = cv2.resize(img, dim)
         
     cv2.imwrite(title + '.jpg', img)
-    p = subprocess.run(['youtube-dl',url,'-f'+file_type]) # Run youtube-dl
+    p = subprocess.run(['yt-dlp',url,'-f'+file_type]) # Run yt-dlp
 
 if __name__ == "__main__":
     main()
